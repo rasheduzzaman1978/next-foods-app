@@ -26,7 +26,7 @@ const FoodDetailsPage = async ({ params }) => {
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
         <div className="p-6 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div className="relative w-full h-[220px] md:h-[280px] bg-slate-100 rounded-2xl overflow-hidden">
+            <div className="relative w-full h-[220px] md:h-[380px] bg-slate-100 rounded-2xl overflow-hidden">
               <Image
                 src={food.image_link}
                 alt={food.dish_name}
@@ -81,7 +81,7 @@ const FoodDetailsPage = async ({ params }) => {
                 {food.main_ingredients?.map((ingredient, index) => (
                   <span
                     key={index}
-                    className="flex items-center gap-2 px-3 py-2 rounded-full bg-slate-100 text-slate-700 text-sm"
+                    className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-sm"
                   >
                     <span className="text-green-500 font-bold">✓</span>
                     {ingredient}
