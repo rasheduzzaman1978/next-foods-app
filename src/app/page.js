@@ -1,0 +1,75 @@
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-indigo-50 to-purple-100">
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="max-w-2xl">
+          <span className="inline-block px-4 py-2 rounded-full bg-indigo-100 text-indigo-600 font-medium text-sm mb-5">
+            Welcome to MyApp
+          </span>
+
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-slate-800 mb-6">
+            Organize Your Tasks, Posts & Productivity in One Place
+          </h1>
+
+          <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            Manage your to-do list, explore posts, and stay productive with a
+            clean and modern dashboard experience.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/todos"
+              className="px-6 py-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg hover:scale-105 transition duration-300"
+            >
+              Explore Todos
+            </Link>
+
+            <Link
+              href="/posts"
+              className="px-6 py-3 rounded-2xl border border-slate-300 bg-white text-slate-700 font-semibold hover:bg-slate-100 transition duration-300"
+            >
+              View Posts
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Side Card */}
+        <div className="w-full max-w-md bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-slate-200 p-8">
+          <h2 className="text-2xl font-bold text-slate-800 mb-6">
+            Dashboard Overview
+          </h2>
+
+          <div className="space-y-5">
+            <div className="flex items-center justify-between bg-indigo-50 rounded-2xl p-4">
+              <div>
+                <p className="text-slate-500 text-sm">Total Todos</p>
+                <h3 className="text-2xl font-bold text-indigo-600">200+</h3>
+              </div>
+              <div className="text-3xl">📝</div>
+            </div>
+
+            <div className="flex items-center justify-between bg-purple-50 rounded-2xl p-4">
+              <div>
+                <p className="text-slate-500 text-sm">Published Posts</p>
+                <h3 className="text-2xl font-bold text-purple-600">100+</h3>
+              </div>
+              <div className="text-3xl">📚</div>
+            </div>
+
+            <div className="flex items-center justify-between bg-pink-50 rounded-2xl p-4">
+              <div>
+                <p className="text-slate-500 text-sm">User Productivity</p>
+                <h3 className="text-2xl font-bold text-pink-600">98%</h3>
+              </div>
+              <div className="text-3xl">🚀</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
