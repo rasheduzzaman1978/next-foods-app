@@ -33,6 +33,7 @@ const FoodDetailsPage = async ({ params }) => {
                 fill
                 className="object-contain p-4"
                 priority
+                loading="eager"
               />
             </div>
 

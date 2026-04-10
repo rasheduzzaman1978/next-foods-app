@@ -17,25 +17,25 @@ const FoodCard = ({ food }) => {
 
   return (
     <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-slate-200 hover:-translate-y-2 w-full max-w-sm flex flex-col h-full">
-      <figure className="relative overflow-hidden h-65 w-full">
-        <Image
-          src={image_link}
-          alt={dish_name}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-        />
+      <figure className="relative overflow-hidden h-64 w-full bg-slate-100 flex items-center justify-center">
+  <Image
+    src={image_link}
+    alt={dish_name}
+    fill
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+  />
 
-        <div className="absolute top-4 left-4 flex gap-2">
-          <span className="bg-gradient-to-r from-pink-500 to-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-            {category}
-          </span>
+  <div className="absolute top-4 left-4 flex gap-2">
+    <span className="bg-gradient-to-r from-pink-500 to-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+      {category}
+    </span>
 
-          <span className="bg-white/90 backdrop-blur-md text-yellow-500 text-xs font-bold px-3 py-1 rounded-full shadow-md">
-            ⭐ {rating}
-          </span>
-        </div>
-      </figure>
+    <span className="bg-white/90 backdrop-blur-md text-yellow-500 text-xs font-bold px-3 py-1 rounded-full shadow-md">
+      ⭐ {rating}
+    </span>
+  </div>
+</figure>
 
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-3 mb-3">

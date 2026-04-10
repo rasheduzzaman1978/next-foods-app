@@ -24,11 +24,11 @@ const Posts = ({ postPromise }) => {
           {posts.map((post) => (
             <div
               key={post.id}
-              className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-200 overflow-hidden"
+              className="bg-white/80 backdrop-blur-md rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-200 overflow-hidden flex flex-col"
             >
               <div className="h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-semibold bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full">
                     Post #{post.id}
@@ -39,7 +39,7 @@ const Posts = ({ postPromise }) => {
                   {post.title}
                 </h2>
 
-                <p className="text-slate-600 leading-relaxed line-clamp-4">
+                <p className="text-slate-600 leading-relaxed line-clamp-4 flex-1">
                   {post.body}
                 </p>
 
