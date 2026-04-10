@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const FoodDetailsPage = async ({ params }) => {
   const { foodId } = await params;
@@ -103,8 +104,25 @@ const FoodDetailsPage = async ({ params }) => {
               </ol>
             </div>
           </div>
+          <div className="flex flex-col sm:flex-row justify-end gap-4 mt-8">
+  <Link
+    href="/"
+    className="px-6 py-3 rounded-2xl border border-slate-300 text-slate-700 font-semibold hover:bg-slate-100 transition duration-300 text-center"
+  >
+    Go Home
+  </Link>
+
+  <Link
+    href="/foods"
+    className="px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold shadow-md hover:opacity-90 transition duration-300 text-center"
+  >
+    Browse Foods
+  </Link>
+</div>
         </div>
+        
       </div>
+      
     </div>
   );
 };
