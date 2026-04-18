@@ -1,17 +1,26 @@
-'use client';
-import React, { use } from 'react';
+import React from 'react';
 
-const Posts = ({ postPromise }) => {
-  const posts = use(postPromise);
-  console.log('posts:', posts);
+const Posts = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch posts');
+  }
+
+  const posts = await res.json();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 p-6 md:p-10">
       <div className="max-w-6xl mx-auto">
+        
+        {/* Page Header */}
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-3">
             Latest Posts
           </h1>
+
           <p className="text-slate-500 text-lg">
             Total Posts:
             <span className="font-semibold text-indigo-600 ml-1">
@@ -20,6 +29,7 @@ const Posts = ({ postPromise }) => {
           </p>
         </div>
 
+        {/* Posts Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
             <div
@@ -56,4 +66,3 @@ const Posts = ({ postPromise }) => {
 };
 
 export default Posts;
-
