@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import FoodCard from '../FoodCard/FoodCard';
 import SearchBar from '../SearchBar/SearchBar';
 import NoFoodFound from '../NoFoodFound/NoFoodFound';
+import CategoryFilter from '../CategoryFilter/CategoryFilter';
 
 const FoodContainer = ({ foods = [] }) => {
   const [filteredFoods, setFilteredFoods] = useState([]);
@@ -38,17 +39,17 @@ const FoodContainer = ({ foods = [] }) => {
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
 
-    if (category === 'all') {
-      setFilteredFoods(foods);
-    } else {
-      const filtered = foods.filter(
+    let filtered = foods;
+
+    if (category !== 'all') {
+      filtered = foods.filter(
         (food) =>
           (food?.category || '').toLowerCase() ===
           category.toLowerCase()
       );
-
-      setFilteredFoods(filtered);
     }
+
+    setFilteredFoods(filtered);
   };
 
   const handleReset = () => {
@@ -58,10 +59,11 @@ const FoodContainer = ({ foods = [] }) => {
 
   return (
     <div>
-      <SearchBar
-        onSearch={handleSearch}
-        onCategoryChange={handleCategoryChange}
-      />
+      <div className="mt-8 max-w-3xl mx-auto">
+        <SearchBar onSearch={handleSearch} />
+
+        <CategoryFilter onCategoryChange={handleCategoryChange} />
+      </div>
 
       <div className="mt-6 inline-flex items-center gap-2 bg-white rounded-2xl px-5 py-3 shadow-md border border-slate-200">
         <span className="text-slate-500 font-medium">Total Foods:</span>
